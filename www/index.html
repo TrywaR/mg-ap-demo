@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MG app</title>
+
+    <!-- jquery -->
+    <script src="lib/jqeury/jquery-3.4.1.min.js"></script>
+    <!-- <script src="lib/jqeury/jquery.cookie.js"></script> -->
+    <!-- jquery x -->
+
+    <!-- bootstrap -->
+    <!-- <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"> -->
+    <!-- <script src="lib/bootstrap/css/bootstrap.min.js"></script> -->
+    <!-- bootstrap x -->
+
+    <!-- main -->
+    <link rel="stylesheet" href="css/style.min.css?v=4.18">
+    <script src="js/main.min.js?v=4.18"></script>
+    <script src="js/content.min.js?v=4.18"></script>
+    <!-- main -->
+
+    <!-- Авторизация -->
+    <script src="js/authorizations/authorization.min.js?v=4.18"></script>
+    <script src="js/authorizations/password-new_form.min.js?v=4.18"></script>
+    <!-- Профиль -->
+    <script src="js/profiles/profiles.min.js?v=4.18"></script>
+    <script src="js/profiles/edit.min.js?v=4.18"></script>
+    <!-- Пользователи -->
+    <script src="js/members/members.min.js?v=4.18"></script>
+    <!-- Тренеры -->
+    <script src="js/trainers/trainers.min.js?v=4.18"></script>
+    <!-- Чат -->
+    <script src="js/chats/chats.min.js?v=4.18"></script>
+    <script src="js/chats/chat.min.js?v=4.18"></script>
+    <!-- Ондайн поддержка -->
+    <script src="js/online_support.min.js?v=4.18"></script>
+    <!-- Курсы -->
+    <script src="js/courses/course.min.js?v=4.18"></script>
+    <script src="js/courses/test.min.js?v=4.18"></script>
+</head>
+<body class="_load_">
+  <header>
+    <div class="block_header_buttons">
+      <div class="block_header_fix">
+        <button class="_button __icon main_menu_show" id="main_menu_show">
+          <!-- <img src="img/icons/menu.svg" alt=""> -->
+        </button>
+
+        <button class="_button __icon main_menu_back" id="main_menu_back">
+          <!-- <img src="img/icons/back.svg" alt=""> -->
+        </button>
+      </div>
+
+      <div class="block_header_items"></div>
+    </div>
+
+    <div id="main_menu" class="block_main_menu">
+      <nav class="main_menu">
+        <ul>
+          <li class="page_profile _active_">
+            <a class="content_upload" href="templates/profile.htm">
+              Профиль
+            </a>
+          </li>
+          <li class="page_chats">
+            <a class="content_upload" href="templates/chats.htm">
+              Чаты
+            </a>
+          </li>
+          <li class="page_schedule">
+            <a class="content_upload" href="templates/schedule.htm">
+              Расписание
+            </a>
+          </li>
+          <li class="page_courses">
+            <a class="content_upload" href="templates/courses.htm">
+              Курсы
+            </a>
+          </li>
+          <li class="page_members">
+            <a class="content_upload" href="templates/members.htm" data-content="templates/members/data.json">
+              Участники
+            </a>
+          </li>
+          <li class="page_trainers">
+            <a class="content_upload" href="templates/trainers.htm">
+              Тренеры
+            </a>
+          </li>
+          <li class="page_online_support">
+            <a class="content_upload" href="templates/online_support.htm">
+              Онлайн поддержка
+            </a>
+          </li>
+          <li class="page_faq">
+            <a class="content_upload" href="templates/faq.htm">
+              F.A.Q
+            </a>
+          </li>
+          <li class="page_privacy">
+            <a class="content_upload" href="templates/privacy.htm">
+              О программе
+            </a>
+          </li>
+          <li class="page_privacy">
+            <a id="profile_exit">
+              Выход
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main></main>
+  <footer></footer>
+  <div class="loader"></div>
+</body>
+</html>

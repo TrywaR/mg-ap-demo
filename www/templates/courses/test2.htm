@@ -1,0 +1,129 @@
+<header>
+  <div class="_title __center">
+    Тест "Системное мышление"
+  </div>
+</header>
+
+<main class="page_test">
+  <div class="_content">
+    <div class="tests">
+      <div class="test _active_">
+        <div class="_questions">
+          Вопрос 1 (Выберете варианты ответов)
+        </div>
+
+        <div class="_answers">
+          <div class="input_checkbox">
+            <input type="checkbox" id="answer_1" value="1">
+            <label for="answer_1">Вариант ответа 1</label>
+          </div>
+          <div class="input_checkbox">
+            <input type="checkbox" id="answer_2" value="2" data-true="true" data-points="11">
+            <label for="answer_2">Вариант ответа 2</label>
+          </div>
+          <div class="input_checkbox">
+            <input type="checkbox" id="answer_3" value="3" data-true="true" data-points="25">
+            <label for="answer_3">Вариант ответа 3</label>
+          </div>
+          <div class="input_checkbox">
+            <input type="checkbox" id="answer_4" value="4">
+            <label for="answer_4">Вариант ответа 4</label>
+          </div>
+        </div>
+
+        <div class="_buttons">
+          <a class="button _test_check_" href="">
+            Дальше
+          </a>
+        </div>
+      </div>
+      <div class="test">
+        <div class="_questions">
+          Вопрос 2 (Выберете ответ)
+        </div>
+
+        <div class="_answers">
+          <div class="input_checkbox">
+            <input type="radio" id="radio_answer_1" name="radio" value="1">
+            <label for="radio_answer_1">Вариант ответа 1</label>
+          </div>
+          <div class="input_checkbox">
+            <input type="radio" id="radio_answer_2" name="radio" value="2" data-true="true" data-points="10">
+            <label for="radio_answer_2">Вариант ответа 2</label>
+          </div>
+          <div class="input_checkbox">
+            <input type="radio" id="radio_answer_3" name="radio">
+            <label for="radio_answer_3">Вариант ответа 3</label>
+          </div>
+          <div class="input_checkbox">
+            <input type="radio" id="radio_answer_4" name="radio" value="4">
+            <label for="radio_answer_4">Вариант ответа 4</label>
+          </div>
+        </div>
+
+        <div class="_buttons">
+          <a class="button _test_check_" href="">
+            Дальше
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="result">
+      <h2 class="_title">
+        Поздравляем с прохождением теста!
+      </h2>
+      <div class="_circle">
+        <div class="_items">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="_data">
+          <!-- <div class="_test_success_count">
+            Правильных <br>
+            ответов<br>
+            <span></span>
+          </div> -->
+          <div class="_test_success_percent">
+            Правильных <br>
+            ответов<br>
+            <span>0</span>%
+          </div>
+          <!-- <div class="_points">
+            Получено<br>
+            <span></span>
+          </div> -->
+        </div>
+      </div>
+
+      <div class="_buttons">
+        <a href="templates/profile.htm" class="button content_upload _test_end_">
+          Продолжить
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(function(){
+      test_init()
+    })
+  </script>
+</main>

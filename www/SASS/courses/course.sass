@@ -1,0 +1,86 @@
+// .page_course
+.block_course,
+.page_course
+  & > ._title
+  & > ._content
+
+  .thems
+    .them
+      padding: 1rem 0
+      margin-bottom: 1rem
+      border-bottom: 1px solid #FFFFFF
+
+      & > ._name
+        text-transform: uppercase
+        font-size: 1.1rem
+        line-height: 1
+        font-weight: bold
+        margin-bottom: 1rem
+
+      & > ._video
+        position: relative
+        margin-bottom: 1rem
+        z-index: 1
+
+        & > ._prev
+          position: absolute
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          z-index: 2
+          background: $color_vide_bg
+          color: white
+          transform: scale(1,1)
+          @include transition_standart
+
+          &:after
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            width: 50px
+            height: 50px
+            margin: auto
+            border-radius: 50%
+            border: 1px solid white
+            background: url(../img/icons/courses_video_play.png) no-repeat 55% center
+            background-size: auto 15px
+            z-index: 2
+
+          &.__chek
+            &:after
+              background: url(../img/icons/courses_video_chek.png) no-repeat center center
+              background-size: auto 15px
+
+          &._active_
+            transform: scale(0,0)
+            visibility: hidden
+
+      & > ._video_name
+        font-size: 1rem
+        line-height: 1
+
+  .practice
+    &.__passed
+
+  .course_info
+    & > ._name
+
+    & > ._text
+      font-size: 1rem
+      line-height: 1.1
+      padding: 1rem 0
+
+  .course_buttons
+    margin-bottom: 2rem
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+
+    .button
+      min-width: inherit
+// .page_course x

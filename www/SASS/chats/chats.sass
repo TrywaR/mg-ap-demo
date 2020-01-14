@@ -1,0 +1,203 @@
+// page_chats
+.block_chats,
+.page_chats
+  & > ._title
+    .input
+      width: 100%
+
+  & > ._content
+
+  .chats
+    .chat
+      &:not(:first-child)
+      &:not(._hide_)
+        ._info
+          position: relative
+
+          &:before
+            content: ''
+            position: absolute
+            top: -.5rem
+            right: 0
+            width: 100%
+            height: 1px
+            background: white
+
+      &:first-child,
+      &._no_border_
+        ._info
+          &:before
+            display: none ! important
+
+    .sort_item
+      &:not(._hide_)
+        & + .chat
+          ._info
+            &:before
+              display: none ! important
+    // chat
+  .chat
+    position: relative
+    display: flex
+    flex-direction: row
+    align-items: flex-start
+    z-index: 1
+    left: 0vw
+    padding: .5rem 0
+    @include transition_standart
+    // height: 12vh
+
+    &._hide_
+      position: fixed
+      left: 100vw
+
+    & > ._checked
+      width: 10%
+      padding-top: 3vh
+      input
+
+      & + ._img
+        width: 50px
+
+        & + ._info
+          width: calc(88% - 50px)
+
+    & > ._img
+      width: 50px
+      height: 50px
+
+      img
+        width: 50px
+        height: 50px
+        max-width: inherit
+        max-height: 100%
+        border-radius: 50%
+        overflow: hidden
+
+      a
+        display: block
+        width: 100%
+        height: 100%
+
+      &.__default
+        background: $color_main_dark url(../img/icons/user.png) no-repeat center center
+        background-size: auto
+        background-size: 20px
+        border-radius: 50%
+        height: 50px
+        width: 50px
+        min-width: 50px
+        max-width: 50px
+
+    & > ._info
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      width: calc(98% - 50px)
+      // height: 11vh
+      margin-left: 2%
+      padding-bottom: calc( 1vh - 1px )
+
+      & > ._name
+        flex-basis: 70%
+        height: 3vh
+        font-size: 2.8vh
+        font-weight: bold
+        overflow: hidden
+        white-space: nowrap
+
+      & > ._date
+        flex-basis: 30%
+        display: flex
+        align-items: flex-end
+        justify-content: flex-end
+        height: 3vh
+        font-size: 2vh
+        text-transform: lowercase
+
+      & > ._last_msg
+        position: relative
+        flex-basis: 100%
+        display: flex
+        flex-direction: row
+        align-items: flex-start
+        // height: 8vh
+        font-size: 2.2vh
+        line-height: 1
+        z-index: 1
+
+        & > ._status
+          padding: .5rem
+          height: 2.5vh
+          width: 2.5vh
+          background-size: auto 2vh ! important
+
+          &[data-status="send"]
+            opacity: .5
+            background: url(../img/icons/chat_send.png) no-repeat 0 center
+          &[data-status="chek"]
+            background: url(../img/icons/chat_send.png) no-repeat 0 center, url(../img/icons/chat_chek.png) no-repeat center center
+            opacity: .5
+          &[data-status="read"]
+            background: url(../img/icons/chat_send.png) no-repeat 0 center, url(../img/icons/chat_chek.png) no-repeat center center
+            opacity: 1
+
+        & > ._txt
+          padding: .5rem .5rem .5rem 0rem
+          font-size: 2.5vh
+          line-height: 1
+
+        & > ._href
+          position: absolute
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          z-index: 2
+
+          a
+            display: flex
+            align-items: flex-start
+            justify-content: flex-end
+            width: 100%
+            // height: 10vh
+            height: 100%
+            text-decoration: none
+            color: white
+            text-align: right
+            background: url(../img/icons/income.png) no-repeat right 0.5rem
+            background-size: auto 2.5vh
+    // chat x
+// page_chats x
+
+// chat_edit
+.chat_edit
+  position: fixed
+  bottom: -100vh
+  left: 0
+  right: 0
+  display: flex
+  flex-direction: row
+  align-items: flex-end
+  justify-content: flex-end
+  padding: 1rem 2rem
+  background: $color_main_dark
+  z-index: 998
+  @include transition_standart
+
+  button
+    color: white
+    text-decoration: none
+    padding: 0
+    margin: 0
+    border: none ! important
+    outline: none ! important
+    box-shadow: none ! important
+    background: none ! important
+    font-size: 1.1rem
+    line-height: 1
+    cursor: pointer
+
+  &._active_
+    bottom: 0vh
+// chat_edit x

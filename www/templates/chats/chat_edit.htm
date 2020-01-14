@@ -1,0 +1,68 @@
+<header>
+  <a class="_button __icon content_upload" href="templates/chats/chat_search.htm">
+    <img src="img/icons/plus.png" alt="">
+  </a>
+  <a class="_button content_upload" href="templates/chats.htm">
+    Готово
+  </a>
+</header>
+
+<main class="page_chats">
+  <div class="_title">
+    Чаты
+  </div>
+  <div class="_content">
+    <div class="chats">
+      <div class="chat">
+        <div class="_checked">
+          <div class="input_checkbox">
+            <input type="checkbox" name="del" id="del_chat_1">
+            <label for="del_chat_1"></label>
+          </div>
+        </div>
+
+        <div class="_img __default">
+          <a class="content_upload" href="templates/members/single.htm">
+            <!-- <img src="img/profile.png" alt=""> -->
+          </a>
+        </div>
+
+        <div class="_info">
+          <div class="_name">
+            Ефимова Вероника Владимировна
+          </div>
+
+          <div class="_date">
+            Суббота
+          </div>
+
+          <div class="_last_msg">
+            <div class="_status" data-status="read"></div>
+
+            <div class="_txt">
+              Привет!
+            </div>
+
+            <div class="_href">
+              <a class="content_upload" href="templates/chats/single_m.htm"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(function(){
+      chat_edit()
+    })
+  </script>
+</main>
+
+<footer>
+  <div class="chat_edit" id="chat_edit">
+    <button id="chat_del">
+      Удалить
+    </button>
+  </div>
+</footer>

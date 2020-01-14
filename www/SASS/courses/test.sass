@@ -1,0 +1,102 @@
+// .page_test
+.block_test,
+.page_test
+  & > ._title
+  & > ._content
+
+  .tests
+    overflow: hidden
+
+  .test
+    display: none
+    padding: 1rem 0
+    width: 100%
+
+    &._active_
+      display: block
+
+    & > ._questions
+    & > ._answers
+      padding: 1rem 0
+
+      .input_checkbox
+        margin-bottom: .5rem
+
+    & > ._buttons
+
+  .result
+    display: none
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    text-align: center
+    height: 100%
+
+    & > ._title
+      margin-bottom: 1rem
+
+    & > ._circle
+      position: relative
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      width: 100%
+      height: 50vh
+      margin-bottom: 1rem
+      z-index: 1
+
+      & > ._items
+        position: relative
+        z-index: 2
+        width: 27px
+        height: 13px
+        margin: auto
+        transform: rotate(-90deg)
+
+        span
+          position: absolute
+          display: block
+          width: 27px
+          height: 13px
+          background: white
+          border-radius: 30%
+          opacity: .3
+          @include transition_standart
+
+          &._active_
+            opacity: 1
+
+      & > ._data
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        margin: auto
+        font-size: 1rem
+        line-height: 1
+
+        & > ._test_success_count
+          font-size: .8rem
+          line-height: 1
+          margin-bottom: .5rem
+
+          span
+            font-size: 1.3rem
+            line-height: 1
+            font-weight: bold
+
+        & > ._points
+          span
+            font-size: 1.3rem
+            line-height: 1
+            font-weight: bold
+
+    &._active_
+      display: flex
+// .page_test x

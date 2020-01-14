@@ -1,0 +1,366 @@
+@import "config"
+@import "mixin"
+@import "reset"
+
+// Контент
+@import "content"
+@import "../fonts/fonts"
+
+// Авторизация
+@import "authorizations/authorizations"
+
+// Профиль
+@import "profiles/profile"
+@import "profiles/edit"
+
+// Участники
+@import "members/members"
+@import "members/member"
+
+// Курсы
+@import "courses/courses"
+@import "courses/course"
+@import "courses/test"
+
+// Тренера
+@import "trainers/trainers"
+@import "trainers/trainer"
+
+// Расписание
+@import "schedule"
+
+// Чаты
+@import "chats/chats"
+@import "chats/chat"
+
+// faq
+@import "faq"
+
+// html
+html
+  font-size: 16px
+  line-height: 18px
+
+// body
+body
+  position: relative
+  // padding-top: $header_height
+  font-size: 18px
+  line-height: 1
+  z-index: 1
+  min-height: 100vh
+  font-family: 'DIN Pro'
+  color: white
+
+  &:before,
+  &:after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+
+  &:before
+    // background: url(../img/bg_img.png) no-repeat center 98%
+    background: url(../img/bg_img2.svg) no-repeat center 90%
+    background-size: 100% auto
+    z-index: -1
+
+  &:after
+    // background: linear-gradient(150deg, #009cdb 30%, #00477e 80%)
+    background: #211D56
+    z-index: -2
+
+  img
+    max-width: 100%
+
+  &._load_
+    .loader
+      transform: scale(1,1)
+      visibility: visible
+      opacity: 1
+// body x
+
+// loader
+.loader
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  width: 100vw
+  height: 100vh
+  z-index: 1000
+  visibility: hidden
+  opacity: 0
+  transform: scale(1.2,1.2)
+  background: $color_main_dark
+  transition: visibility .5s ease .5s, opacity .3s ease .3s
+
+  &:after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    margin: auto
+    width: 50px
+    height: 50px
+    border: 3px solid transparent
+    border-left-color: $color_active
+    border-right-color: $color_active
+    border-radius: 50%
+    z-index: 1001
+
+    animation: circle ease-in-out 1.5s
+    animation-iteration-count: infinite
+    transform-origin: 50% 50%
+    @include transition_standart
+
+@keyframes circle
+  0%
+    transform:  rotate(0deg) scale(1,1)
+  60%
+    transform:  rotate(-360deg) scale(1.2,1.2)
+  100%
+    transform:  rotate(0deg) scale(1,1)
+// loader x
+
+// header
+header
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  // background: rgba(0, 0, 0, 0.2)
+  background: $color_header_bg
+  // height: $header_height
+  display: none
+  z-index: 3
+
+  .block_header_buttons
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+
+    .main_menu_back
+      background: url(../img/icons/back.svg) no-repeat center center ! important
+      background-size: auto 1.3rem ! important
+
+      &:not(._active_)
+        display: none ! important
+
+    .main_menu_show
+      // display: flex
+      // flex-direction: column
+      // justify-content: center
+      // align-items: center
+      background: url(../img/icons/menu.svg) no-repeat center center ! important
+      background-size: auto 1.3rem ! important
+      transform: rotate(0deg)
+      @include transition_standart
+
+      &:focus,
+      &:active
+        // background: none ! important
+        outline: none ! important
+        border: none ! important
+
+      // span
+      //   display: flex
+      //   flex-direction: column
+      //   justify-content: center
+      //   align-items: center
+      //   width: 25px
+      //   height: 2px
+      //   background: white
+      //
+      //   &:not(:last-child)
+      //     margin-bottom: 6px
+
+      &._active_
+        transform: rotate(90deg)
+        z-index: 1000
+
+    .block_header_fix,
+    .block_header_items
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      padding: 0
+      // max-width: 65%
+      overflow: hidden
+      // flex-grow: 1
+      // padding: 1rem
+
+      & > ._title,
+      & > ._button
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        color: white
+        // flex-grow: 1
+        white-space: nowrap
+        background: none
+        outline: none ! important
+        border: none ! important
+        padding: .8rem .5rem
+        height: 1.4rem
+        font-size: 1.2rem
+        line-height: 1
+        box-sizing: content-box
+        text-decoration: none
+        max-width: 100%
+        overflow: hidden
+
+      & > ._title
+        margin-right: auto
+
+        &.__center
+          // padding-right: 60px
+          margin-left: auto
+
+      & > ._button
+        // margin-left: auto
+        text-align: right
+
+        &.__icon
+          display: flex
+          align-items: center
+          justify-content: center
+          width: 2rem
+
+          img
+            // width: 2rem
+            max-width: 100%
+            max-height: 100%
+
+
+    .block_header_items
+      flex-grow: 1
+      justify-content: flex-end
+      width: 100%
+      padding-right: .5rem
+
+    .block_header_fix
+      max-width: 6.5rem
+      padding-left: .5rem
+
+  .block_header
+    padding: 1rem
+    font-size: 1.2rem
+    line-height: 1.2
+
+// header x
+
+// main
+main
+  position: relative
+  z-index: 1
+  overflow-y: scroll
+
+  & > ._title
+    padding: 1rem
+    background: $color_main_dark
+    font-size: 1.45rem
+    font-weight: bold
+
+  & > ._content
+    padding: 1rem
+    height: 100%
+    box-sizing: border-box
+// main x
+
+// footer
+footer
+  display: none
+  position: relative
+  z-index: 2
+// footer x
+
+// page
+.pages
+//   position: fixed
+//   top: 0
+//   left: 0
+//   right: 0
+//   bottom: 0
+//   width: 300vw
+//   display: flex
+//   flex-direction: row
+//   overflow: hidden
+//   transition: all .5s ease
+//
+// .page
+//   width: 100vw
+//   height: 100vh
+//   overflow-y: auto
+
+.row
+  display: flex
+  flex-direction: row
+  width: 100%
+// page x
+
+// .block_main_menu
+.block_main_menu
+  // display: none
+  position: fixed
+  top: 0
+  left: -100%
+  bottom: 0
+  width: 90vw
+  // background: linear-gradient(150deg, #009cdb 30%, #00477e 80%)
+  background: $color_header_bg
+  transition: all .5s ease
+  // z-index: -1
+  z-index: -1
+  padding-top: calc( 25px + 2rem )
+
+  &:after
+    content: ''
+    position: fixed
+    top: 0
+    right: -10vw
+    bottom: 0
+    width: 10vw
+    background: rgba(0, 0, 0, 0.5)
+    transition: all .5s ease .1s
+    z-index: -1
+
+  &._active_
+    left: 0
+    z-index: 999
+
+    &:after
+      right: 0
+
+  .main_menu
+    ul
+      li
+        color: white
+        padding: .5rem 1rem
+
+        a
+          font-size: 1.2rem
+          line-height: 1
+          text-decoration: none
+          color: white
+
+        &._active_
+          background: rgba(0, 0, 0, 0.2)
+// .block_main_menu x
+
+// Поворот
+@media screen and (orientation:landscape)
+  html
+    font-size: 18px
+    line-height: 22px
+
+// Большой экран
+@media screen and (min-width:776px)
+  html
+    font-size: 20px
+    line-height: 24px
