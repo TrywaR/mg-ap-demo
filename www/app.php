@@ -37,4 +37,16 @@ if( isset($_REQUEST['app']) && $_REQUEST['app'] == 'app' ){
     ];
     echo json_encode($oProfile);
   };
+
+  if( isset($_REQUEST['form_support']) ) {
+    // $message = print_r($_POST, 1);
+    $to      = 'trywar@yandex.ru';
+    $subject = 'App support';
+    $message = print_r($_POST, 1);
+    $headers = 'From: send@mgapp.beget.tech' . "\r\n" .
+      'X-Mailer: PHP/' . phpversion();
+    mail($to, $subject, $message, $headers);
+
+    // mail('admin@trywar.ru', 'App support', $message);
+  };
 }

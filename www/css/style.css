@@ -149,6 +149,7 @@ main p {
   text-align: center;
   box-sizing: border-box; }
 
+.textarea,
 .input {
   display: inline-block;
   background: rgba(0, 0, 0, 0.2);
@@ -163,18 +164,26 @@ main p {
   text-align: center;
   color: white;
   box-sizing: border-box; }
+  .textarea.__icon,
   .input.__icon {
     text-align: left;
     padding-left: 30px; }
+    .textarea.__icon::-webkit-input-placeholder,
     .input.__icon::-webkit-input-placeholder {
       color: white; }
+    .textarea.__icon:-ms-input-placeholder,
     .input.__icon:-ms-input-placeholder {
       color: white; }
+    .textarea.__icon::placeholder,
     .input.__icon::placeholder {
       color: white; }
+  .textarea.__search,
   .input.__search {
     background: rgba(0, 0, 0, 0.2) url(../img/icons/search.png) no-repeat 10px center;
     background-size: 15px auto; }
+
+.textarea {
+  resize: none; }
 
 .input_checkbox {
   min-height: 30px;
